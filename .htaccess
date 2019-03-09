@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    php_value display_errors on
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+<Files ".baby-moon-data.json">  
+  Order Allow,Deny
+  Deny from all
+</Files>
